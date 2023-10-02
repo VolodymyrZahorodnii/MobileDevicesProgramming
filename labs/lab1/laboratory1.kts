@@ -1,6 +1,20 @@
 // 1. Написати функцію з одним аргументом, яка перевіряє чи є аргумент парним чи непарним. Функція повинна повернути "even" або "odd" в залежності від того яке то число. Якщо аргумент null то необхідно повернути пусту строку.//
 
 
+// Але перед цим додам дві тестові функції:
+
+fun assertEquals(res: Int, exp: Int, msg: String? = null) {
+    assert(res == exp) {
+        "Assertion failed: $msg\nExpected: $exp\nActual: $res"
+    }
+}
+
+fun assertEquals(res: String, exp: String, msg: String? = null) {
+    assert(res == exp) {
+        "Assertion failed: $msg\nExpected: $exp\nActual: $res"
+    }
+}
+
 fun isEven(arg: Int?): String {
     // Якщо аргумент null, то повертаємо пусту строку
     if (arg == null) {
@@ -16,14 +30,14 @@ fun isEven(arg: Int?): String {
 }
 
 //Базовий тест:
-fun testisEven(): Boolean {
-    return isEven(1) == "odd" &&
-            isEven(2) == "even" &&
-            isEven(34) == "even" &&
-            isEven(43213102) == "even" &&
-            isEven(0) == "even" &&
-            isEven(-1) == "odd" &&
-            isEven(null) == ""
+fun testIsEven() {
+    assertEquals(isEven(1), "odd", "isEven(1)")
+    assertEquals(isEven(2), "even", "isEven(2)")
+    assertEquals(isEven(34), "even", "isEven(34)")
+    assertEquals(isEven(43213102), "even", "isEven(43213102)")
+    assertEquals(isEven(0), "even", "isEven(0)")
+    assertEquals(isEven(-1), "odd", "isEven(-1)")
+    assertEquals(isEven(null), "", "isEven(null)")
 }
 
 
@@ -52,10 +66,10 @@ fun sumSimple(): Int {
 }
 
 //Базовий тест
-fun testsumSimple(): Boolean {
+fun testSumSimple() {
     val result = sumSimple()
     val expected = 2 + 3 + 5 + 7 + 11
-    return result == expected
+    assertEquals(result, expected, "sumSimple")
 }
 
 // 3. Написати функцію з одним аргументом n, що є числом. Функція повинна повернути суму наступного ряду з n чисел 1 + 11 + 111 + 1111 + ...., де кожний елемент - число з постійно зростаючою кількістю одиниць.
@@ -78,34 +92,18 @@ fun sumOfSeries(n: Int): Int {
 
 //Базовий тест
 
-fun testsumOfSeries(): Boolean {
-    val result1 = sumOfSeries(1)
-    val result2 = sumOfSeries(2)
-    val result4 = sumOfSeries(4)
-    val result5 = sumOfSeries(5)
-    val result7 = sumOfSeries(7)
-    val result0 = sumOfSeries(0)
-    val resultNegative = sumOfSeries(-1)
-
-    return result1 == 1 &&
-            result2 == 12 &&
-            result4 == 1234 &&
-            result5 == 12345 &&
-            result7 == 1234567 &&
-            result0 == 0 &&
-            resultNegative == 0
+fun testSumOfSeries() {
+    assertEquals(sumOfSeries(1), 1, "sumOfSeries(1)")
+    assertEquals(sumOfSeries(2), 12, "sumOfSeries(2)")
+    assertEquals(sumOfSeries(4), 1234, "sumOfSeries(4)")
+    assertEquals(sumOfSeries(5), 12345, "sumOfSeries(5)")
+    assertEquals(sumOfSeries(7), 1234567, "sumOfSeries(7)")
+    assertEquals(sumOfSeries(0), 0, "sumOfSeries(0)")
+    assertEquals(sumOfSeries(-1), 0, "sumOfSeries(-1)")
 }
 
-fun main() {
-    if (testsumSimple()) {
-        println("The test for sumSimple has passed")
+    fun main() {
+        testSumSimple()
+        testSumOfSeries()
+        testIsEven()
     }
-
-    if (testsumOfSeries()) {
-        println("The test for sumOfSeries has passed")
-    }
-
-    if (testisEven()) {
-        println("The test for isEven has passed")
-    }
-}
