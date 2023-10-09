@@ -69,7 +69,6 @@ class Manager(
             }
 
             val developerCount = team.count { it is Developer }
-            val designerCount = team.count { it is Designer }
 
             if (developerCount > team.size / 2) {
                 totalSalary *= 1.1
