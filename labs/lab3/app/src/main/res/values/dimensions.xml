@@ -2,8 +2,8 @@
 <resources>
     <dimen name="profile_padding_top">72dp</dimen>
     <dimen name="profile_padding_horizontal">16dp</dimen>
-    <dimen name="profile_user_photo_width">72dp</dimen>
-    <dimen name="profile_user_photo_height">72dp</dimen>
+    <dimen name="profile_user_photo_width">96dp</dimen>
+    <dimen name="profile_user_photo_height">96dp</dimen>
     <dimen name="profile_user_name_padding_top">20dp</dimen>
     <dimen name="profile_user_name_padding_bottom">0dp</dimen>
     <dimen name="profile_follow_user_icon_size">24dp</dimen>
@@ -11,7 +11,7 @@
     <dimen name="profile_user_description_padding_top">20dp</dimen>
     <dimen name="profile_user_description_padding_bottom">20dp</dimen>
     <dimen name="profile_user_details_item_max_width">96dp</dimen>
-    <dimen name="profile_user_details_icon_size">24dp</dimen>
+    <dimen name="profile_user_details_icon_size">42dp</dimen>
     <dimen name="profile_user_details_icon_padding_bottom">8dp</dimen>
     <dimen name="call_control_panel_padding_top">32dp</dimen>
     <dimen name="call_control_panel_padding_bottom">72dp</dimen>

@@ -29,7 +29,7 @@ fun CallBackgroundPane(photo: Int, modifier: Modifier = Modifier) {
         val overlayBrush = Brush.verticalGradient(
             colorStops = arrayOf(
                 0.3f to Color.Transparent,
-                0.8f to MaterialTheme.colorScheme.tertiary
+                0.8f to MaterialTheme.colorScheme.surfaceTint
             )
         )
         Box(

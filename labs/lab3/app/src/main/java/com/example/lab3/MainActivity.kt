@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
                             )
                         )
                     }
-//                    ProfileScreen(user = user) //Топовий екран
+                    ProfileScreen(user = user) //Топовий екран
 
                     val call by remember {
                         derivedStateOf {
@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                     }
-                    CallScreen(callInfo = call) //Не настільки топовий, але теж нічого
+//                    CallScreen(callInfo = call) //Не настільки топовий, але теж нічого
                 }
             }
         }

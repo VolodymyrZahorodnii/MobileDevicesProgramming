@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -66,6 +67,7 @@ fun UserDetails(
         UserDetailsItem(label = numPostsLabel) {
             Icon(
                 painter = painterResource(id = R.drawable.num_posts),
+                modifier = Modifier.fillMaxSize(),
                 contentDescription = stringResource(R.string.number_of_posts_cont_desc),
                 tint = MaterialTheme.colorScheme.secondary
             )
@@ -78,6 +80,7 @@ fun UserDetails(
         UserDetailsItem(label = numFollowersLabel) {
             Icon(
                 painter = painterResource(id = R.drawable.num_followers),
+                modifier = Modifier.fillMaxSize(),
                 contentDescription = stringResource(R.string.number_of_followers_cont_desc),
                 tint = MaterialTheme.colorScheme.secondary
             )
@@ -90,6 +93,7 @@ fun UserDetails(
         UserDetailsItem(label = numFollowingLabel) {
             Icon(
                 painter = painterResource(id = R.drawable.num_following),
+                modifier = Modifier.fillMaxSize(),
                 contentDescription = stringResource(R.string.number_of_followings_cont_desc),
                 tint = MaterialTheme.colorScheme.secondary
             )
